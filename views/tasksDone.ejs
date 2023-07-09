@@ -11,7 +11,7 @@
 <body>
     <div class="row">
         <% doneList.forEach((studies, i) => { %>
-
+        <% if(studies.done == true){ %>
         <div class="card" style="width: 18rem; padding: 10;">
             <div class="card-body">
             <h5 class="card-title"><%= studies.title %></h5> 
@@ -19,6 +19,8 @@
             <p class="card-text"><%= studies.time %></p>
             <a href="/delete/<%= studies._id %>" class="btn btn-danger">Delete</a>
         </div>
+        <% } %>
+        <% })%>
     </div>
 </body>
 </html>

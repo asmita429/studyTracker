@@ -109,8 +109,14 @@ router.post('/done/:id',async function(req, res, next) {
 //   req.render('getStarted');
 // })
 
-router.get('/done',function(req, res, next) {
-  res.render('tasksDone');
+
+router.get('/done', function(req, res, next) {
+    Studies.find().then((studies) =>{
+      res.render('tasksDone', 
+      { title: 'Study track', 
+      doneList: studies });
+    })
 });
+
 
 module.exports = router;
