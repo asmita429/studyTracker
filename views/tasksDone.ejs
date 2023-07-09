@@ -4,26 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tasks done</title>
+    <%- include('partials/navbar')%>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity=
     "sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
-    <div class="row">
-        <% doneList.forEach((studies, i) => { %>
-        <% if(studies.done == true){ %>
-        <div class="card" style="width: 18rem; padding: 10;">
-            <div class="card-body">
-            <label for="title">Title:</label>
-            <h5 class="card-title"><%= studies.title %></h5> 
-            <label for="description">Description:</label>
-            <p class="card-text"><%= studies.description %></p>
-            <label for="time">time:</label>
-            <p class="card-text"><%= studies.time %></p>
-            <a href="/delete/<%= studies._id %>" class="btn btn-danger">Delete</a>
+    <div class="container">
+        <div class="row">
+          <% doneList.forEach((studies, i) => { %>
+            <% if(studies.done == true) {%>
+          <div class="card" style="width: 18rem">
+            <div class="card-body" style="background-color: lavenderblush">
+              <label for="title">Title:</label>
+              <h5 class="card-title" style="font-style: italic">
+                <%= studies.title %>
+              </h5>
+              <label for="description">Description:</label>
+              <p class="card-text" style="font-style: italic">
+                <%= studies.description %>
+              </p>
+              <label for="time">Time:</label>
+              <p class="card-text" style="font-style: italic">
+                <%= studies.time %>
+              </p>
+              <label for="exceeded">Status:</label>
+              <p class="card-text"><%= studies.exceeded %></p>
+              <a href="/delete/<%= studies.id %>" class="btn btn-danger"
+                >Delete</a
+              >
+            </div>
+          </div>
+          <%}%>
+          <% }) %>
         </div>
-        <% } %>
-        <% })%>
-    </div>
+      </div>
 </body>
 </html>
