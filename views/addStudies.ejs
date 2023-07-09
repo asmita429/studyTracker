@@ -1,37 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>title</title>
     <%- include('partials/navbar')%>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity=
-    "sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-
-    <form method="post" action="/saveStudies" style="width: 50%;">
-        <div class="form-group">
-            <label for="name">Title:</label>
-            <select class="form-control" id="title1" name="title" placeholder="Select title of your study plan">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+    <form
+      method="post"
+      action="/saveStudies"
+      class=" register"
+    >
+      <div class="row">
+        <div
+          class="col-md-3 register-left"
+          style="text-align: center; margin-top: 10%"
+        >
+        <img src="/images/trackLogo.png" style="height: 200px; width: 300px;">
+          <h3 style="color: white; font-weight: bold; font-size: 2.2rem;">Track Your Study</h3>
+        </div>
+        <div class="col-md-9 register-right">
+          <h3
+            class="register-heading"
+            style="text-align: center; padding: 40px; font-weight: bold;"
+          >
+            Add Studies
+          </h3>
+          <div class="register-form">
+            <div class="form-group">
+              <label for="name">Title:</label>
+              <select
+                class="form-control"
+                id="title1"
+                name="title"
+                placeholder="Select title of your study plan"
+              >
                 <option>Reading</option>
                 <option>Writing</option>
                 <option>Revising</option>
                 <option>Coding</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="description">Description:</label>
-            <input type="string" class="form-control" id="description" name="description" placeholder="Enter description">
-        </div>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <input
+                type="string"
+                class="form-control"
+                id="description"
+                name="description"
+                placeholder="Enter description"
+              />
+            </div>
 
-        <div class="form-group">
-            <label for="time">Set Time:</label>
-            <input type="datetime" class="form-control" id="time" name="time" placeholder="Enter time in hour format">
-        </div>
+            <div class="form-group">
+              <label for="time">Set Time:</label>
+              <input
+                type="datetime"
+                class="form-control"
+                id="time"
+                name="time"
+                placeholder="Enter time in hour format"
+              />
+            </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary " style="background-color: #F5C726; border-color: #F5C726;">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
-    
-
-</body>
 </html>
