@@ -10,10 +10,10 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-mongoose.connect('mongodb://127.0.0.1/expenseTracker')
+mongoose.connect('mongodb://127.0.0.1/studyTracker')
   .then(() => { console.log("connected to db")})
   .catch((e) => {console.log("error", e)});
-  
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

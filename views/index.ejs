@@ -8,22 +8,32 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p style="font-size: large;">Welcome to <%= title %></p>
     
-    <div style="margin-left:85% ; width: max-content;">
-      <a href="/add" class="btn btn-primary">Add Expense</a>
+    <div style="margin-left:60% ; width: max-content;">
+      <a href="/add" class="btn btn-primary">Add Study plan</a>
+      <a href="/progressMap" class="btn btn-primary" style="background-color: green;">progressMap</a>
+      <a href="/links" class="btn btn-primary" style="background-color: rgb(44, 175, 220);">Explore notes</a>
+      <a href="/done" class="btn btn-primary">Tasks Completed</a>
     </div>
     
     <div class="row">
-    <% expenseList.forEach((studies, i) => { %>
+
+    <% studyList.forEach((studies, i) => { %>
    
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem; padding: 10;">
       <div class="card-body">
-        <h5 class="card-title"><%= studies.title %></h5>
+        <h5 class="card-title"><%= studies.title %></h5> 
         <p class="card-text"><%= studies.description %></p>
         <p class="card-text"><%= studies.time %></p>
-        <a href="/edit/<%= studies.id %>" class="btn btn-success">Update</a>
-        <a href="/delete/<%= studies.id %>" class="btn btn-danger">Delete</a>
+        <p class="card-text"><%= studies.exceeded %></p>
+        <p class="card-text"><%= studies.done %></p>
+        <a href="/edit/<%= studies._id %>" class="btn btn-success">Update</a>
+        <a href="/delete/<%= studies._id %>" class="btn btn-danger">Delete</a>
+        <form method="post" action="/done/<%= studies._id %>">
+          <input type="submit" name="done" value="Done"/>
+        </form>
+        
         
       </div>
     </div>
