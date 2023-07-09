@@ -1,8 +1,40 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: bisque;
+}
+
+.card {
+  margin: 20px;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+blockquote {
+  margin: 20;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+}
+
+blockquote p {
+  padding: 10px;
+  /* background: whitesmoke; */
+  border-radius: 5px;
+  font-family: cursive;
+}
+blockquote figcaption {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: black;
+  font-family: cursive;
+  /* background: whitesmoke; */
+}
+
+.jumbotron {
+  border-radius: 0 !important;
 }

@@ -20,7 +20,7 @@ router.get('/add',function(req, res, next) {
 router.post('/saveStudies',async function(req,res,next){
   let studies = new Studies({
     "title" : req.body.title, 
-    "descriotion" : req.body.descriotion,
+    "description" : req.body.description,
     "time" : parseInt(req.body.time)
   })
   
@@ -42,7 +42,7 @@ router.get('/edit/:id',async function(req,res, next){
 router.post('/saveEdited/:id',async function(req,res, next){
   var formData = {
     "title" : req.body.title, //form title name ='title'
-    "descriotion" : req.body.descriotion,
+    "description" : req.body.descriotion,
     "time" : parseInt(req.body.time)
   };
   await Studies.findOneAndUpdate(
