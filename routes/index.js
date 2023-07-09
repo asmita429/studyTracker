@@ -4,17 +4,6 @@ const Studies = require('../models/studies');
 const Logins = require('../models/logins');
 // const studies = require('../models/studies');
 
-/* GET home page. */
-// router.post('/login',async function(req,res,next) {
-//   let logins = new Logins({
-//   "username" : req.body.username, 
-//   "password" : req.body.password,
-// });
-// if(logins.username = )
-// await Logins.insertMany(logins);
-// res.redirect('/main');
-// });
-
 
 router.get('/', function(req, res, next) {
   Studies.find().then((studies) =>{
@@ -118,5 +107,9 @@ router.get('/done', function(req, res, next) {
     })
 });
 
+router.get('/map', function(req,res,next){
+  
+  res.render('progressMap');
+})
 
 module.exports = router;

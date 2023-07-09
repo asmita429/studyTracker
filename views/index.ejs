@@ -11,9 +11,9 @@
     <p style="font-size: large;">Welcome to <%= title %></p>
     
     <div style="margin-left:60% ; width: max-content;">
-      <a href="/add" class="btn btn-primary">Add Study plan</a>
-      <a href="/progressMap" class="btn btn-primary" style="background-color: green;">progressMap</a>
-      <a href="/links" class="btn btn-primary" style="background-color: rgb(44, 175, 220);">Explore notes</a>
+      <a href="/add" class="btn btn-primary">Add Study Plan</a>
+      <a href="/map" class="btn btn-primary" style="background-color: green;">Progress Graph</a>
+      <a href="/links" class="btn btn-primary" style="background-color: rgb(44, 175, 220);">Explore Notes</a>
       <a href="/done" class="btn btn-primary">Tasks Completed</a>
     </div>
     
@@ -23,9 +23,13 @@
       <% if(studies.done == false) {%>
     <div class="card" style="width: 18rem; padding: 10;">
       <div class="card-body">
+        <label for="title">Title:</label>
         <h5 class="card-title"><%= studies.title %></h5> 
+        <label for="description">Description:</label>
         <p class="card-text"><%= studies.description %></p>
+        <label for="time">Time:</label>
         <p class="card-text"><%= studies.time %></p>
+        <label for="exceeded">Status:</label>
         <p class="card-text"><%= studies.exceeded %></p>
         <a href="/edit/<%= studies._id %>" class="btn btn-success">Update</a>
         <a href="/delete/<%= studies._id %>" class="btn btn-danger">Delete</a>

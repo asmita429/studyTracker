@@ -14,8 +14,11 @@
         <% if(studies.done == true){ %>
         <div class="card" style="width: 18rem; padding: 10;">
             <div class="card-body">
+            <label for="title">Title:</label>
             <h5 class="card-title"><%= studies.title %></h5> 
+            <label for="description">Description:</label>
             <p class="card-text"><%= studies.description %></p>
+            <label for="time">time:</label>
             <p class="card-text"><%= studies.time %></p>
             <a href="/delete/<%= studies._id %>" class="btn btn-danger">Delete</a>
         </div>
