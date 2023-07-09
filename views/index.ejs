@@ -36,32 +36,40 @@
     </div>
     
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
         <% studyList.forEach((studies, i) => { %>
           <% if(studies.done == false) {%>
-        <div class="card" style="width: 18rem">
-          <div class="card-body" style="background-color: lavenderblush">
-            <label for="title">Title:</label>
-            <h5 class="card-title" style="font-style: italic">
+        <div class="card p-0" style=" display: flex; flex-direction: row;">
+          <div class="card-body" style="background-color: #f1e6bd">
+            <h5 class="card-title">
               <%= studies.title %>
             </h5>
-            <label for="description">Description:</label>
-            <p class="card-text" style="font-style: italic">
+            <label for="description">Description</label>
+            <p class="card-text" style="font-style: italic; background-color: rgb(59 47 5 / 25%); color: white; height: 50px; padding: 5px;">
               <%= studies.description %>
             </p>
+            <div class="d-flex justify-content-space-between">
             <label for="time">Time:</label>
-            <p class="card-text" style="font-style: italic">
+            <p class="card-text ps-4" style="font-style: italic">
               <%= studies.time %>
             </p>
+          </div>
+          <div class="d-flex justify-content-space-between">
             <label for="exceeded">Status:</label>
-            <p class="card-text"><%= studies.exceeded %></p>
-            <a href="/edit/<%= studies.id %>" class="btn btn-success">Update</a>
-            <a href="/delete/<%= studies.id %>" class="btn btn-danger"
+            <p class="card-text ps-4"><%= studies.exceeded %></p>
+          </div>
+        </div>
+
+            <div>
+              <form method="post" action="/done/<%= studies._id %>" class="d-flex justify-content-end pt-2 pe-2">
+                <input type="submit" name="done" value="Done"/>
+              </form>
+              <div class="d-flex flex-column px-5">
+            <a href="/edit/<%= studies.id %>" class="btn btn-success" style="margin: 20px 10px">Update</a>
+            <a href="/delete/<%= studies.id %>" class="btn btn-danger" style="margin: 20px 10px"
               >Delete</a
             >
-            <form method="post" action="/done/<%= studies._id %>">
-              <input type="submit" name="done" value="Done"/>
-            </form>
+          </div>
           </div>
         </div>
         <%}%>
@@ -80,5 +88,6 @@
         </blockquote>
       </figure>
     </div> -->
+
   </body>
 </html>
