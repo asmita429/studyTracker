@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title><%= studies.title %></title>
+  <head>
+    <title>title</title>
     <%- include('partials/navbar')%>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity=
-    "sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
     <form method="post" action="/saveEdited/<%= studies._id %>">
-        
-        <div class="form-group">
-            <label for="name">Title:</label>
-            <select class="form-control" id="title1" name="title" value="<%= studies.title %>" placeholder="Select title of your study plan">
-                <option>Reading</option>
-                <option>Writing</option>
-                <option>Revising</option>
-                <option>Coding</option>
-              </select>
-        </div>
-        <div class="form-group">
-            <label for="description">Description:</label>
-            <input type="string" class="form-control" id="description" name="description" value="<%= studies.description %>" placeholder="Enter description">
-        </div>
-        <div class="form-group">
-            <label for="time">Set Time:</label>
-            <input type="datetime" class="form-control" id="time" name="time" value="<%= studies.time %>" placeholder="Enter time in hour format">
-        </div>
+      <div class="form-group">
+        <label for="name">Title:</label>
+        <select
+          class="form-control"
+          id="title1"
+          name="title"
+          placeholder="Select title of your study plan"
+        >
+          <option>Reading</option>
+          <option>Writing</option>
+          <option>Revising</option>
+          <option>Coding</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input
+          type="string"
+          class="form-control"
+          id="description"
+          name="description"
+          placeholder="Enter description"
+        />
+      </div>
 
-        <button type="submit" class="btn btn-success">Update</button>
+      <div class="form-group">
+        <label for="time">Set Time:</label>
+        <input
+          type="datetime"
+          class="form-control"
+          id="time"
+          name="time"
+          placeholder="Enter time in hour format"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Update</button>
     </form>
-
-
-</body>
+  </body>
 </html>
